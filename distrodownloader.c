@@ -21,14 +21,52 @@ void completemsg(){
 }
 
 
+void ubuntu(){
+	unsigned int ubuntu_response;
+
+	printf("\nChoose a version to install...\n\n");
+	printf("0. Exit\n");
+	printf("1. Ubuntu 21.04 -64bit\n");
+	printf("2. Ubuntu MATE 21.04 - 64bit\n");
+	printf("3. Xubuntu 21.04 - 64bit\n");
+	printf("4. Lubuntu 21.04 - 64bit\n");
+	printf("5. Ubuntu Budgie 21.04 - 64bit\n\n");
+	scanf("%i", &ubuntu_response);
+
+	if (ubuntu_response == 1){
+			system("wget https://releases.ubuntu.com/21.04/ubuntu-21.04-desktop-amd64.iso");
+			completemsg();	
+		}
+	
+		else if (ubuntu_response == 2){
+			system("wget https://cdimage.ubuntu.com/ubuntu-mate/releases/21.04/release/ubuntu-mate-21.04-desktop-amd64.iso");
+			completemsg();
+		}
+
+		else if (ubuntu_response == 3){
+					system("wget http://mirror.us.leaseweb.net/ubuntu-cdimage/xubuntu/releases/21.04/release/");
+					completemsg();
+		}
+
+		else if (ubuntu_response == 4){
+					system("wget https://cdimage.ubuntu.com/lubuntu/releases/21.04/release/lubuntu-21.04-desktop-amd64.iso");
+					completemsg();
+		}
+
+		else if (ubuntu_response == 5){
+					system("wget https://cdimage.ubuntu.com/ubuntu-budgie/releases/21.04/release/ubuntu-budgie-21.04-desktop-amd64.iso");
+					completemsg();
+		}
+}
+
 void manjaro(){
 	unsigned int manjaro_response;
 
 	printf("\nChoose a version to install...\n\n");
 	printf("0. Exit\n");
-	printf("1. XFCE Edition\n");
-	printf("2. KDE Plasma Edition\n");
-	printf("3. Gnome Edition\n\n");
+	printf("1. XFCE Edition -64bit\n");
+	printf("2. KDE Plasma Edition - 64bit\n");
+	printf("3. Gnome Edition - 64bit\n\n");
 	printf("Select Version Number: ");
 	scanf("%i", &manjaro_response);
 
@@ -66,7 +104,7 @@ int main(){
     scanf("%i", &response);
 
     if (response == 1){
-        system("wget https://releases.ubuntu.com/21.04/ubuntu-21.04-desktop-amd64.iso");
+    	ubuntu();
         completemsg();
     }
 
